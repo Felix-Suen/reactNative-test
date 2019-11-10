@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { Image } from 'react-native';
 
-export default class HelloWorldApp extends Component {
+class Places extends Component {
   render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Hello World!</Text>
-        <Image source={pic} style={{ width: 193, height: 110 }}/>
+      <View style={{ alignItems: 'center'}}>
+        <Text>I am in {this.props.place} </Text>
       </View>
     );
   }
 }
+
+class App extends Component {
+  render() {
+    return (
+      <View style={{alignItems: 'center', top: 300}}>
+        <Places place='Amsterdam'></Places>
+        <Places place='New York'></Places>
+        <Places place='Beijing'></Places>
+      </View>
+    );
+  }
+}
+
+export default App;
