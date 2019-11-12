@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+
+const styles = StyleSheet.create({
+  biggie: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 50,
+  }
+});
 
 class Blink extends Component {
 
@@ -20,7 +28,7 @@ class Blink extends Component {
     }
     
     return (
-      <Text style={{alignItems: 'center'}}>{this.props.text}</Text>
+      <Text style={{alignItems: 'center'}} style={styles.biggie}>{this.props.text}</Text>
     );
   }
 }
