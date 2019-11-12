@@ -28,7 +28,9 @@ class Blink extends Component {
     }
     
     return (
-      <Text style={{alignItems: 'center'}} style={styles.biggie}>{this.props.text}</Text>
+      <View>
+        <Text style={styles.biggie}>{this.props.text}</Text>
+      </View>
     );
   }
 }
@@ -36,8 +38,8 @@ class Blink extends Component {
 export default class Blinker extends Component {
   render() {
     return (
-      <View style={{alignItems: 'center', top: 200}}>
-        <Blink text="ok Boomer"></Blink>
+      <View style={{alignItems: 'center', backgroundColor: 'powderblue', flex: 1}}>
+        <Blink text="Skooma Pls"></Blink>
       </View>
     );
   }
