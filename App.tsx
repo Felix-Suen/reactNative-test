@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-class Places extends Component {
+class Blink extends Component {
+
+  componentDidMount(){
+    // Toggle the state every second
+    setInterval(() => (
+      this.setState(previousState => (
+        { isShowingText: !previousState.isShowingText }
+      ))
+    ), 1000);
+  }
+
+  state = { isShowingText: true };
+
   render() {
+    if (!this.state.isShowingText) {
+      return null;
+    }
+    
     return (
-      <View style={{ alignItems: 'center'}}>
-        <Text>I am in {this.props.place} </Text>
-      </View>
+      <Text style={{alignItems: 'center'}}>{this.props.text}</Text>
     );
   }
 }
 
-class App extends Component {
+export default class Blinker extends Component {
   render() {
     return (
-      <View style={{alignItems: 'center', top: 300}}>
-        <Places place='Amsterdam'></Places>
-        <Places place='New York'></Places>
-        <Places place='Beijing'></Places>
+      <View style={{alignItems: 'center', top: 200}}>
+        <Blink text="ok Boomer"></Blink>
       </View>
     );
   }
 }
-
-export default App;
